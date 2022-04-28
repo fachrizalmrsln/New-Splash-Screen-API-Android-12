@@ -12,6 +12,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        initiateSplashScreen()
+    }
+
+    private fun initiateSplashScreen() {
         installSplashScreen().apply {
             setKeepOnScreenCondition {
                 viewModel.splashReady.value == true
